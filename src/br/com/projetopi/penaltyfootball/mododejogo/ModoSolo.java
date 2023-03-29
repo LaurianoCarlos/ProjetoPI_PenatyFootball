@@ -12,7 +12,7 @@ public class ModoSolo {
 	protected int placarGoleiro;
 	protected String jogarNovamente;
 
-	/* definido para pegar dados do usuario nas funcoes */
+	/*definido para pegar dados do usuario nas funcoes */
 	protected Scanner input;
 
 	public ModoSolo() {
