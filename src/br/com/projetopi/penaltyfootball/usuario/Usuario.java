@@ -1,18 +1,23 @@
 package br.com.projetopi.penaltyfootball.usuario;
 
+import java.util.Random;
+
 public class Usuario {
 
 	private String nome;
     private int nivelDeJogo;
     private int cantoSelecionado;
     private int pontuacao;
+    private int id_usuario;
     
+Random rdn = new Random();
 
     public Usuario() {
      this.nome = "Rony";
      this.nivelDeJogo = 1;
      this.cantoSelecionado = 1;
      this.pontuacao = 0;
+     this.setId_usuario(rdn.nextInt(10000,99999));
     }
 
     public Usuario(String nome) {
@@ -53,4 +58,12 @@ public class Usuario {
     public void setCantoSelecionado(int cantoSelecionado) {
         this.cantoSelecionado = cantoSelecionado;
     }
+
+	public int getId_usuario() {
+		return id_usuario;
+	}
+
+	public void setId_usuario(int id_usuario) {
+		this.id_usuario = id_usuario;
+	}
 }
