@@ -8,7 +8,7 @@ import br.com.projetopi.penaltyfootball.usuario.Usuario;
 public class ModoSolo {
 
 	protected int goleiro;
-	protected int placarJogador;
+	protected  int placarJogador;
 	protected int placarGoleiro;
 	protected String jogarNovamente;
 
@@ -68,7 +68,7 @@ public class ModoSolo {
 		switch (nivel) {
 		case 1:
 			for (int c = 0; c <= 0; c++) {
-				numero[c] = numeroAleatorio();
+				numero[c] =  ((int) (Math.random() * 10) + 1);
 
 				if (cantoSelecionado == numero[c]) {
 

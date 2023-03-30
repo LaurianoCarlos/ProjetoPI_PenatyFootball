@@ -48,7 +48,7 @@ Random rdn = new Random();
     }
 
     public void setPontuacao(int pontuacao) {
-        this.pontuacao = pontuacao;
+        this.pontuacao += pontuacao;
     }
 
     public int getCantoSelecionado() {

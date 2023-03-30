@@ -3,7 +3,7 @@ package br.com.projetopi.penaltyfootball.animacao;
 public  class Animacao {
 
 	public static void exibirMenuInicial() {
-		System.out.println("[1] INICIAR JOGO\n[2] MULTIPLAYER\n[3] MODO HISTORIA\n[0] SAIR \n");
+		System.out.println("--[1] INICIAR JOGO\n--[2] MULTIPLAYER\n--[3] MODO HISTORIA\n--[4] RANKEADA\n--[0] SAIR \n");
 	}
 
 	public static void inicializacaoModoSolo() {
@@ -22,6 +22,16 @@ public  class Animacao {
 		System.out.println();
 		System.out.println("QUE VENÇA O MELHOR! ");
 		System.out.println();
+	}
+	
+	public static void inicializacaoModoRankeada() {
+		System.out.println("PENALTY FOOTBALL RANKEADA");
+		System.out.println();
+		System.out.println("PROIBIDO ERRAR! VAI TREMER?");
+		System.out.println();
+		System.out.println("Converta o penalti para continuar, cada gol acrescenta uma pontuacao! boa sorte.");
+		System.out.println();
+
 	}
 
 	public static void gol(boolean gol) {

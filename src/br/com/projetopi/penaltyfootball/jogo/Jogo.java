@@ -3,6 +3,7 @@ package br.com.projetopi.penaltyfootball.jogo;
 import java.util.Scanner;
 
 import br.com.projetopi.penaltyfootball.animacao.Animacao;
+import br.com.projetopi.penaltyfootball.mododejogo.ModoRankeada;
 import br.com.projetopi.penaltyfootball.mododejogo.ModoSolo;
 import br.com.projetopi.penaltyfootball.mododejogo.MultiJogador;
 
@@ -16,6 +17,7 @@ public class Jogo {
 	   Scanner input = new Scanner(System.in);
 		ModoSolo modoSolo = new ModoSolo();
 		MultiJogador multiJogador = new MultiJogador();
+		ModoRankeada modoRankeada = new ModoRankeada();
 		
 		do {
 
@@ -36,8 +38,15 @@ public class Jogo {
 		break;
 			case 2:
 				multiJogador.multiJogador();
-				break;
+		break;
+			case 3:
+		break;
+			case 4:
+				modoRankeada.Rankedada();
+		break;
 			}
+			
+				
 
 		} while (opcao != 0);
 		
