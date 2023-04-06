@@ -1,5 +1,7 @@
 package br.com.projetopi.penaltyfootball.mododejogo;
 
+
+
 import java.util.Scanner;
 
 import br.com.projetopi.penaltyfootball.animacao.Animacao;
@@ -257,7 +259,6 @@ public class ModoSolo {
 				System.out.println();
 				System.out.println("--- Modo solo encerrado ---");
 				System.out.println();
-
 				break;
 			}
 		}
