@@ -75,6 +75,65 @@ public  class DbMetodos {
 	        }
 	    }
 	}
+	public static void exibirRanking() {
+		System.out.println();
+	    Connection conn = null;
+	    PreparedStatement stmt = null;
+	    ResultSet rs = null;
+	    try {
+	        // Carrega o driver JDBC do MySQL
+	        Class.forName("com.mysql.cj.jdbc.Driver");
 
+	        // Define os parâmetros de conexão
+	        String url = "jdbc:mysql://containers-us-west-39.railway.app:7370/railway";
+	        String user = "root";
+	        String password = "lMnPfO3W5wHiMC8kANDh";
 
+	        // Estabelece a conexão
+	        conn = DriverManager.getConnection(url, user, password);
+
+	        // Prepara a instrução SQL
+	        String sql = "SELECT id, nome, pontuacao FROM rankeada ORDER BY pontuacao DESC LIMIT 10";
+	        stmt = conn.prepareStatement(sql);
+
+	        // Executa a consulta SQL
+	        rs = stmt.executeQuery();
+
+	        // Imprime os resultados
+	        System.out.println("RANKING GLOBAL");
+	        int contador = 0;
+	        while (rs.next()) {
+	            contador++;
+	            int id = rs.getInt("id");
+	            String nome = rs.getString("nome");
+	            int pontuacao = rs.getInt("pontuacao");
+	            System.out.println( contador +" Posicao" +" Id: " + id  + " - " + nome + " - " + pontuacao + " Pontos");
+	            
+	        }
+
+	    } catch (ClassNotFoundException e) {
+	        // Se o driver JDBC não puder ser carregado, exibe uma mensagem de erro
+	        e.printStackTrace();
+	    } catch (SQLException e) {
+	        // Se ocorrer um erro durante a conexão ou consulta, exibe uma mensagem de erro
+	        e.printStackTrace();
+	    } finally {
+	        try {
+	            // Fecha os recursos
+	            if (rs != null) {
+	                rs.close();
+	            }
+	            if (stmt != null) {
+	                stmt.close();
+	            }
+	            if (conn != null) {
+	                conn.close();
+	            }
+	        } catch (SQLException e) {
+	            // Se ocorrer um erro ao fechar os recursos, exibe uma mensagem de erro
+	            e.printStackTrace();
+	        }
+	    }
+	    System.out.println();
+	}
 }

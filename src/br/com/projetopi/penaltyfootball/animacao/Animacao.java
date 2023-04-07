@@ -3,7 +3,7 @@ package br.com.projetopi.penaltyfootball.animacao;
 public  class Animacao {
 
 	public static void exibirMenuInicial() {
-		System.out.println("--[1] INICIAR JOGO\n--[2] MULTIPLAYER\n--[3] MODO HISTORIA\n--[4] RANKEADA\n--[0] SAIR \n");
+		System.out.println("--[1] INICIAR JOGO\n--[2] MULTIPLAYER\n--[3] MODO HISTORIA\n--[4] RANKEADA\n--[5] RANKING GLOBAL\n--[0] SAIR \n");
 	}
 
 	public static void inicializacaoModoSolo() {
@@ -52,24 +52,6 @@ public  class Animacao {
 
 		}
 
-	}
-
-	public static void escolherCanto() {
-
-		System.out.println("\nESCOLHA UM CANTO!!!\n");
-
-		System.out.println("IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII");
-		System.out.println("II                              II");
-		System.out.println("II  1                        4  II");
-		System.out.println("II                              II");
-		System.out.println("II              3               II");
-		System.out.println("II                              II");
-		System.out.println("II  2                        5  II");
-		System.out.println("II                              II \n");
-
-		System.out.println(
-				"[1] Superior esquerdo \n[2] Inferior esquerdo \n[3] Meio \n[4] Superior Direito \n[5] Inferior Direito\n");
-		System.out.print("Opcao: ");
 	}
 
 	public static void exibirGanhador(boolean vdd) {
