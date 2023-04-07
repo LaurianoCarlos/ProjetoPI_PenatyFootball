@@ -1,5 +1,6 @@
 package br.com.projetopi.penaltyfootball.mododejogo;
 
+import br.com.projetopi.penaltyfootball.BancoDeDados.DbMetodos;
 import br.com.projetopi.penaltyfootball.animacao.Animacao;
 import br.com.projetopi.penaltyfootball.usuario.Usuario;
 
@@ -16,7 +17,6 @@ public class ModoRankeada extends ModoSolo {
 
 	
 			usuario.setNivelDeJogo(1);
-			usuario.setId_usuario(((int) (Math.random() * 99999) + 1));
 			
 			jogarNovamente = "S";
 			// Define os pontuacao inicial do jogador
@@ -57,8 +57,8 @@ public class ModoRankeada extends ModoSolo {
 			System.out.println();
 			System.out.println("--Fim de jogo!!!--");
 			System.out.println("Sua pontuacao foi: "+ usuario.getPontuacao()+ " pontos!");
-			System.out.println("Seu id: "+usuario.getId_usuario());
 			
+			DbMetodos.adicionarNaTabelaRanking(usuario.getNome(), usuario.getPontuacao());
 			System.out.println();
 
 	}
