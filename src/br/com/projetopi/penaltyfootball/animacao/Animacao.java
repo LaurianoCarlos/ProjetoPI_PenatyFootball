@@ -3,6 +3,8 @@ package br.com.projetopi.penaltyfootball.animacao;
 public  class Animacao {
 
 	public static void exibirMenuInicial() {
+		System.out.println("PENALTY FOOTBALL GAME");
+		System.out.println();
 		System.out.println("--[1] INICIAR JOGO\n--[2] MULTIPLAYER\n--[3] MODO HISTORIA\n--[4] RANKEADA\n--[5] RANKING GLOBAL\n--[0] SAIR \n");
 	}
 

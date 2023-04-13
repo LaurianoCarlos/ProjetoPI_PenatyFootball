@@ -5,7 +5,7 @@ import br.com.projetopi.penaltyfootball.usuario.Usuario;
 
 public class MultiJogador extends ModoSolo {
 
-	public String nomeJogador(boolean verificarJogador) {
+	private String nomeJogador(boolean verificarJogador) {
 
 		if (verificarJogador == false) {
 			System.out.print("Insira seu BATEDOR: ");
@@ -21,7 +21,7 @@ public class MultiJogador extends ModoSolo {
 		return nome;
 	}
 
-	public int escolherCanto(String nome) {
+	private int escolherCanto(String nome) {
 
 		System.out.println("\nESCOLHA UM CANTO!!!\n");
 

@@ -1,7 +1,5 @@
 package br.com.projetopi.penaltyfootball.mododejogo;
 
-
-
 import java.util.Scanner;
 
 import br.com.projetopi.penaltyfootball.animacao.Animacao;
@@ -10,47 +8,88 @@ import br.com.projetopi.penaltyfootball.usuario.Usuario;
 public class ModoSolo {
 
 	protected int goleiro;
-	protected  int placarJogador;
+	protected int placarJogador;
 	protected int placarGoleiro;
 	protected String jogarNovamente;
 
-	/*definido para pegar dados do usuario nas funcoes */
+	/*Metodo para atribuir dados aos atributos e Buscar valor dos Atributos*/
 	protected Scanner input;
 
+	/**
+	 * define um objeto Scanner para pegar dados do usuario.
+	 */
 	public ModoSolo() {
 		this.input = new Scanner(System.in);
 	}
 
-	public int getGoleiro() {
-		return goleiro;
-	}
+    /**
+     * Retorna o canto do goleiro.
+     * @return o canto do goleiro.
+     */
+    public int getGoleiro() {
+        return goleiro;
+    }
+    
+    /**
+     * Define o canto do goleiro.
+     * @param goleiro o índice do goleiro.
+     */
+    public void setGoleiro(int goleiro) {
+        this.goleiro = goleiro;
+    }
+    
+    /**
+     * Retorna o placar do jogador.
+     * @return o placar do jogador.
+     */
+    public int getPlacarJogador() {
+        return placarJogador;
+    }
+    
+    /**
+     * Define o placar do jogador.
+     * @param placarJogador o placar do jogador.
+     */
+    public void setPlacarJogador(int placarJogador) {
+        this.placarJogador = placarJogador;
+    }
+    
+    /**
+     * Retorna o placar do goleiro.
+     * @return o placar do goleiro.
+     */
+    public int getPlacarGoleiro() {
+        return placarGoleiro;
+    }
+    
+    /**
+     * Define o placar do goleiro.
+     * @param placarGoleiro o placar do goleiro.
+     */
+    public void setPlacarGoleiro(int placarGoleiro) {
+        this.placarGoleiro = placarGoleiro;
+    }
 
-	public void setGoleiro(int goleiro) {
-		this.goleiro = goleiro;
-	}
 
-	public int getPlacarJogador() {
-		return placarJogador;
-	}
-
-	public void setPlacarJogador(int placarJogador) {
-		this.placarJogador = placarJogador;
-	}
-
-	public int getPlacarGoleiro() {
-		return placarGoleiro;
-	}
-
-	public void setPlacarGoleiro(int placarGoleiro) {
-		this.placarGoleiro = placarGoleiro;
-	}
-
+	/**
+	 * 
+	 * Método responsável por gerar um número aleatório.
+	 * 
+	 * @return Um número inteiro aleatório.
+	 */
 	protected int numeroAleatorio() {
 
 		int cantoGoleiro = ((int) (Math.random() * 5) + 1);
 		return cantoGoleiro;
 	}
 
+	/**
+	 * 
+	 * Método responsável por solicitar ao usuário que escolha um nível de
+	 * dificuldade para o jogo.
+	 * 
+	 * @return Um número inteiro que representa o nível escolhido pelo usuário.
+	 */
 	protected int escolherNivel() {
 
 		System.out.println();
@@ -64,50 +103,82 @@ public class ModoSolo {
 		return nivel;
 	}
 
+	/**
+	 * Método utilizado para gerar um número aleatório que representa a posição do
+	 * goleiro no jogo de simulação de pênaltis.
+	 * 
+	 * @param nivel            Inteiro que determina a dificuldade do jogo (1, 2 ou
+	 *                         3)
+	 * @param cantoSelecionado Inteiro que representa a posição escolhida pelo
+	 *                         jogador para chutar a bola (entre 1 e 4)
+	 * @param goleiro          Inteiro que representa a posição do goleiro, gerado
+	 *                         aleatoriamente (entre 1 e 5)
+	 * @return Inteiro que representa a posição do goleiro
+	 */
 	protected int nivel(int nivel, int cantoSelecionado, int goleiro) {
-		int numero[] = new int[4];
+		int numero[] = new int[4]; // Vetor utilizado para armazenar os números aleatórios gerados
+		goleiro = ((int) (Math.random() * 5) + 1); // Gera um número aleatório entre 1 e 5 para representar a posição do
+													// goleiro
 
+		// Verifica o valor de nivel para decidir quantos números aleatórios deve gerar
 		switch (nivel) {
 		case 1:
+			// Se nivel for igual a 1, gera apenas um número aleatório entre 1 e 10 e o
+			// compara com o cantoSelecionado
 			for (int c = 0; c <= 0; c++) {
-				numero[c] =  ((int) (Math.random() * 10) + 1);
-
+				numero[c] = ((int) (Math.random() * 10) + 1);
 				if (cantoSelecionado == numero[c]) {
-
+					// Se o número aleatório gerado for igual ao cantoSelecionado, o valor desse
+					// número é atribuído à variável goleiro
 					goleiro = numero[c];
 				}
 			}
 			break;
 
 		case 2:
+			// Se nivel for igual a 2, gera 2 números aleatórios e os compara com o
+			// cantoSelecionado
 			for (int c = 0; c <= nivel; c++) {
 				numero[c] = numeroAleatorio();
-
 				if (cantoSelecionado == numero[c]) {
-
+					// Se algum dos números aleatórios gerados for igual ao cantoSelecionado, o
+					// valor desse número é atribuído à variável goleiro
 					goleiro = numero[c];
 				}
 			}
-
 			break;
 
 		case 3:
+			// Se nivel for igual a 3, gera 3 números aleatórios e os compara com o
+			// cantoSelecionado
 			for (int c = 0; c <= nivel; c++) {
 				numero[c] = numeroAleatorio();
-
 				if (cantoSelecionado == numero[c]) {
-
+					// Se algum dos números aleatórios gerados for igual ao cantoSelecionado, o
+					// valor desse número é atribuído à variável goleiro
 					goleiro = numero[c];
 				}
 			}
-
 			break;
-		default:
 
+		default:
+			// Se nivel não for igual a 1, 2 ou 3, exibe uma mensagem de erro no console
+			System.out.println("Erro... Reinicie o jogo!");
 		}
+
+		// Retorna o valor da variável goleiro
+		// Se o valor for diferente de cantoSelecionado terá que ser marcado o gol senão
+		// defesa di goleiro
 		return goleiro;
 	}
+	
 
+	/**
+	 * 
+	 * Método responsável por verificar se foi gol ou defesa.
+	 * 
+	 * @return Booleano onde true é considerado gol e false considerado defesa.
+	 */
 	protected boolean verificarPenalty(int cantoSelecionado, int goleiro) {
 
 		boolean gol = true;
@@ -119,6 +190,12 @@ public class ModoSolo {
 		return gol;
 	}
 
+	/**
+	 * 
+	 * Método responsável por solicitar ao usuário que insira seu nome.
+	 * 
+	 * @return String que representa o nome escolhido pelo usuário.
+	 */
 	protected String nomeJogador() {
 
 		System.out.print("Insira seu nome: ");
@@ -135,6 +212,12 @@ public class ModoSolo {
 		return nome;
 	}
 
+	/**
+	 * 
+	 * Método responsável por solicitar ao usuário que escolha um canto para chutar.
+	 * 
+	 * @return Um número inteiro que representa o canto escolhido pelo usuário.
+	 */
 	protected int escolherCanto() {
 
 		System.out.println("\nESCOLHA UM CANTO!!!\n");
@@ -154,6 +237,10 @@ public class ModoSolo {
 		int canto = input.nextInt();
 		return canto;
 	}
+	
+	/**
+	Método de jogo que simula uma partida de penaltis onde quem marcar 5 gols primeiro é o vencedor da partida
+	*/
 
 	public void modoSolo() {
 		// Chama o método de inicialização da animação
