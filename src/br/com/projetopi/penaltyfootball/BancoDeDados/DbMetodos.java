@@ -13,7 +13,7 @@ public  class DbMetodos {
 	    Connection conn = null;
 	    PreparedStatement stmt = null;
 	    ResultSet rs = null;
-	    
+	  
 	    try {
 	        // Carrega o driver JDBC do MySQL
 	        Class.forName("com.mysql.cj.jdbc.Driver");
@@ -43,11 +43,14 @@ public  class DbMetodos {
 	                stmtUpdate.setInt(1, pontuacao);
 	                stmtUpdate.setInt(2, id);
 	                stmtUpdate.executeUpdate();
-	                System.out.println("Novo Recorde!!");
+	                System.out.println("--Novo Recorde!!--");
 	            } else {
-	                System.out.println("Pontuação Mantida");
+	                System.out.println();
 	            }
+	            
 	        } 
+	        
+	      
 	        // Se não existe um registro com o mesmo nome, insere um novo registro
 	        else {
 	            String sqlInsert = "INSERT INTO rankeada (nome, pontuacao) VALUES (?, ?)";
@@ -58,7 +61,7 @@ public  class DbMetodos {
 	            System.out.println("Novo registro inserido com sucesso.");
 	        }
 
-
+	       
 
 	    } catch (ClassNotFoundException e) {
 	        // Se o driver JDBC não puder ser carregado, exibe uma mensagem de erro

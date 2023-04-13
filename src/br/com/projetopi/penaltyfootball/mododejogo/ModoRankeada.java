@@ -55,7 +55,7 @@ public class ModoRankeada extends ModoSolo {
 			
 			System.out.println();
 			System.out.println("--Fim de jogo!!!--");
-			System.out.println("Sua pontuacao foi: "+ usuario.getPontuacao()+ " pontos!");
+			System.out.println("Seu Id: "+ usuario.getId_usuario() + " pontuacao foi: "+ usuario.getPontuacao()+ " pontos!");
 			
 			DbMetodos.adicionarNaTabelaRanking(usuario.getNome(), usuario.getPontuacao());
 			System.out.println();

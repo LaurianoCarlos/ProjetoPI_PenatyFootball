@@ -21,12 +21,11 @@ public class ModoSolo {
 	protected int placarGoleiro;
 	protected String jogarNovamente;
 
-	/*Metodo para atribuir dados aos atributos e Buscar valor dos Atributos*/
+	/*Metodo para atribuir dados aos atributos*/
 	protected Scanner input;
 
-	/**
-	 * define um objeto Scanner para pegar dados do usuario.
-	 */
+	/*define um objeto Scanner para pegar dados do usuario*/
+	 
 	public ModoSolo() {
 		this.input = new Scanner(System.in);
 	}
@@ -119,15 +118,15 @@ public class ModoSolo {
 	 * @param nivel            Inteiro que determina a dificuldade do jogo (1, 2 ou
 	 *                         3)
 	 * @param cantoSelecionado Inteiro que representa a posição escolhida pelo
-	 *                         jogador para chutar a bola (entre 1 e 4)
+	 *                         jogador para chutar a bola (entre 1 e 5)
 	 * @param goleiro          Inteiro que representa a posição do goleiro, gerado
 	 *                         aleatoriamente (entre 1 e 5)
 	 * @return Inteiro que representa a posição do goleiro
 	 */
 	protected int nivel(int nivel, int cantoSelecionado, int goleiro) {
 		int numero[] = new int[4]; // Vetor utilizado para armazenar os números aleatórios gerados
-		goleiro = 0; // Gera um número aleatório entre 1 e 5 para representar a posição do
-													// goleiro
+		goleiro =((int) (Math.random() * 5) + 1); //(Casting explícito)  Gera um número aleatório entre 1 e 5 para representar a posição do
+													// goleiro 
 
 		// Verifica o valor de nivel para decidir quantos números aleatórios deve gerar
 		switch (nivel) {
