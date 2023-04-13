@@ -125,17 +125,17 @@ public class ModoSolo {
 	 */
 	protected int nivel(int nivel, int cantoSelecionado, int goleiro) {
 		int numero[] = new int[4]; // Vetor utilizado para armazenar os números aleatórios gerados
-		goleiro =((int) (Math.random() * 5) + 1); //(Casting explícito)  Gera um número aleatório entre 1 e 5 para representar a posição do
-													// goleiro 
-
+		
+		
+		 
 		// Verifica o valor de nivel para decidir quantos números aleatórios deve gerar
 		switch (nivel) {
 		case 1:
 			// Se nivel for igual a 1, gera apenas um número aleatório entre 1 e 10 e o
 			// compara com o cantoSelecionado
 			for (int c = 0; c <= 0; c++) {
-				numero[c] = ((int) (Math.random() * 10) + 1);
-			
+				numero[c] = ((int) (Math.random() * 10) + 1);//(Casting explícito)  Gera um número aleatório entre 1 e 5
+															 //para representar a posição do goleiro	
 				if (cantoSelecionado == numero[c]) {
 					// Se o número aleatório gerado for igual ao cantoSelecionado, o valor desse
 					// número é atribuído à variável goleiro
