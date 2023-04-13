@@ -45,7 +45,7 @@ public class Jogo {
 			}
 
 			do {
-				// Entra em um loop até que o usuário escolha uma opcção  válida (entre 0 e 5)
+				// Entra em um loop até que o usuário escolha uma opcção válida (entre 0 e 5)
 				if (opcao < 0 || opcao > 5) {
 					System.out.println();
 					System.out.println("[Insercao invalida]");
@@ -54,7 +54,7 @@ public class Jogo {
 					opcao = input.nextInt();
 
 				}
-				// Entra em um loop até que o usuário escolha uma opcção  válida (entre 0 e 5)
+				// Entra em um loop até que o usuário escolha uma opcção válida (entre 0 e 5)
 			} while (opcao < 1 || opcao > 5);
 
 			switch (opcao) {
@@ -75,6 +75,7 @@ public class Jogo {
 				break;
 			default:
 				System.out.println("Opcao Inválida");
+				break;
 			}
 
 		} while (opcao != 0);

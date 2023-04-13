@@ -1,7 +1,7 @@
 
 /*
  * Nome do arquivo: PenaltyFootball.java
- * Autor: lauriano
+ * Autor: lauriano <laurianocarlos@hotmail.com>
  * Data de criação: 01/03/2023
  * Versão: 1.0
  * Descrição: classe que exercuta o jogo

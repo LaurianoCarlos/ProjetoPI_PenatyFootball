@@ -15,7 +15,7 @@ public class ModoRankeada extends ModoSolo {
 		Usuario usuario = new Usuario(nomeJogador());
 		gol = true;
 
-	
+	//O modo Rankeada se passa no modo fácil
 			usuario.setNivelDeJogo(1);
 			
 			jogarNovamente = "S";
@@ -37,7 +37,6 @@ public class ModoRankeada extends ModoSolo {
 				} while (usuario.getCantoSelecionado() < 1 || usuario.getCantoSelecionado() > 5);
 
 				// Gera um número aleatório para representar a escolha do goleiro
-				goleiro = numeroAleatorio();
 				// Calcula o nível de dificuldade do goleiro com base no nível de jogo escolhido
 				// pelo usuário, no canto selecionado e na escolha aleatória do goleiro
 				int nivelLooping = nivel(usuario.getNivelDeJogo(), usuario.getCantoSelecionado(), goleiro);

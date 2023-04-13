@@ -1,3 +1,12 @@
+/*
+ * Nome do arquivo: PenaltyFootball.java
+ * Autor: lauriano <laurianocarlos@hotmail.com>
+ * Data de criação: 01/03/2023
+ * Versão: 1.0
+ * Descrição: classe que exercuta o jogo
+ * Colaboradores: Ana Lucia, Bruno de Oliveira, Giovanna Moreira, Melissa Gonçalve, Lauriano Carlos
+ * Última modificação: 13/04/2023 (Lauriano)
+ */
 package br.com.projetopi.penaltyfootball.mododejogo;
 
 import java.util.Scanner;
@@ -117,7 +126,7 @@ public class ModoSolo {
 	 */
 	protected int nivel(int nivel, int cantoSelecionado, int goleiro) {
 		int numero[] = new int[4]; // Vetor utilizado para armazenar os números aleatórios gerados
-		goleiro = ((int) (Math.random() * 5) + 1); // Gera um número aleatório entre 1 e 5 para representar a posição do
+		goleiro = 0; // Gera um número aleatório entre 1 e 5 para representar a posição do
 													// goleiro
 
 		// Verifica o valor de nivel para decidir quantos números aleatórios deve gerar
@@ -127,6 +136,7 @@ public class ModoSolo {
 			// compara com o cantoSelecionado
 			for (int c = 0; c <= 0; c++) {
 				numero[c] = ((int) (Math.random() * 10) + 1);
+			
 				if (cantoSelecionado == numero[c]) {
 					// Se o número aleatório gerado for igual ao cantoSelecionado, o valor desse
 					// número é atribuído à variável goleiro

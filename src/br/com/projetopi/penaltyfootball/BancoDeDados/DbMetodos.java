@@ -26,31 +26,40 @@ public  class DbMetodos {
 
 	        // Estabelece a conexão
 	        conn = DriverManager.getConnection(url, usuario, senha);
+	     // Verifica se já existe um registro com o mesmo nome
+	        String sqlSelect = "SELECT * FROM rankeada WHERE nome = ?";
+	        PreparedStatement stmtSelect = conn.prepareStatement(sqlSelect);
+	        stmtSelect.setString(1, nome);
+	        rs = stmtSelect.executeQuery();
 
-	        // Verifica se já existe um registro com o mesmo nome e pontuação no banco de dados
-	        // Comando utilizado no banco de dados
-	        String sqlVerifica = "SELECT nome, pontuacao FROM rankeada WHERE nome = ? AND pontuacao = ?";
-	        PreparedStatement stmtVerifica = conn.prepareStatement(sqlVerifica);
-	        stmtVerifica.setString(1, nome);
-	        stmtVerifica.setInt(2, pontuacao);
-	        rs = stmtVerifica.executeQuery();
-
+	        // Se já existe um registro com o mesmo nome
 	        if (rs.next()) {
-	            System.out.println("Já existe um registro com os valores informados.");
-	        } else {
-	            // Prepara a instrução SQL
-	            String sql = "INSERT INTO rankeada (nome, pontuacao) VALUES (?, ?)";
-	            stmt = conn.prepareStatement(sql);
-
-	            // Define os parâmetros da instrução SQL
-	            stmt.setString(1, nome);
-	            stmt.setInt(2, pontuacao);
-
-	            // Executa a instrução SQL
-	            stmt.executeUpdate();
-
-	            System.out.println("Registro adicionado com sucesso.");
+	            int id = rs.getInt("id"); // obtém o ID do registro existente
+	            int pontuacaoExistente = rs.getInt("pontuacao"); // obtém a pontuação existente
+	            // Se a pontuação atual for maior do que a existente, atualiza a pontuação
+	            if (pontuacao > pontuacaoExistente) {
+	                String sqlUpdate = "UPDATE rankeada SET pontuacao = ? WHERE id = ?";
+	                PreparedStatement stmtUpdate = conn.prepareStatement(sqlUpdate);
+	                stmtUpdate.setInt(1, pontuacao);
+	                stmtUpdate.setInt(2, id);
+	                stmtUpdate.executeUpdate();
+	                System.out.println("Novo Recorde!!");
+	            } else {
+	                System.out.println("Pontuação Mantida");
+	            }
+	        } 
+	        // Se não existe um registro com o mesmo nome, insere um novo registro
+	        else {
+	            String sqlInsert = "INSERT INTO rankeada (nome, pontuacao) VALUES (?, ?)";
+	            PreparedStatement stmtInsert = conn.prepareStatement(sqlInsert);
+	            stmtInsert.setString(1, nome);
+	            stmtInsert.setInt(2, pontuacao);
+	            stmtInsert.executeUpdate();
+	            System.out.println("Novo registro inserido com sucesso.");
 	        }
+
+
+
 	    } catch (ClassNotFoundException e) {
 	        // Se o driver JDBC não puder ser carregado, exibe uma mensagem de erro
 	        e.printStackTrace();
