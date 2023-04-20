@@ -42,7 +42,11 @@ public class MultiJogador extends ModoSolo {
 	}
 
 	public void multiJogador() {
-		// Inicia a animação de introdução do modo multiplayer
+		
+		/**
+		 * Inicia a animação de introdução do modo multiplayer
+		 * @see Animacao#inicializacaoMultiJogador()
+		 */
 		Animacao.inicializacaoMultiJogador();
 
 		System.out.println();

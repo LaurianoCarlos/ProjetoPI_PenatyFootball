@@ -19,6 +19,7 @@ public  class Animacao {
 		System.out.println();
 
 	}
+	
 	public static void inicializacaoMultiJogador() {
 		System.out.println("PENALTY FOOTBALL MULTIJOGADOR");
 		System.out.println();
