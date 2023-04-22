@@ -1,3 +1,12 @@
+/*
+ * Nome do arquivo: Animacao.java
+ * Autor: lauriano <laurianocarlos@hotmail.com>
+ * Data de criação: 01/03/2023
+ * Versão: 1.0
+ * Descrição: classe que contém as animacoes do jogo
+ * Colaboradores: Ana Lucia, Bruno de Oliveira, Giovanna Moreira, Melissa Gonçalve, Lauriano Carlos
+ * Última modificação: 13/04/2023 (Lauriano)
+ */
 package br.com.projetopi.penaltyfootball.animacao;
 
 public  class Animacao {

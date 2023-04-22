@@ -1,11 +1,9 @@
-
 /*
- * Nome do arquivo: PenaltyFootball.java
- * Autor: lauriano
+ * Nome do arquivo: Jogo.java
+ * Autor: Ana Lucia,Bruno de Oliveira, Giovanna Moreira, Lauriano Carlos, Melissa Gonçalves
  * Data de criação: 01/03/2023
  * Versão: 1.0
  * Descrição: classe que manipula os comando do usuario para executar metodos de jogo
- * Colaboradores: Ana Lucia,Bruno de Oliveira, Giovanna Moreira, Melissa Gonçalve, Lauriano Carlos
  * Última modificação: 13/04/2023 (Lauriano)
  */
 package br.com.projetopi.penaltyfootball.jogo;

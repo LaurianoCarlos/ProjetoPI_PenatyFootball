@@ -1,3 +1,11 @@
+/*
+ * Nome do arquivo: Usuario.java
+ * Autor: Ana Lucia,Bruno de Oliveira, Giovanna Moreira, Lauriano Carlos, Melissa Gonçalves
+ * Data de criação: 01/03/2023
+ * Versão: 1.0
+ * Descrição: classe que contém dados do usuario/jogador
+ * Última modificação: 13/04/2023 (Lauriano)
+ */
 package br.com.projetopi.penaltyfootball.usuario;
 
 import java.util.Random;

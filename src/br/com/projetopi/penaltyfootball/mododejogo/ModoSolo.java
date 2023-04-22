@@ -1,9 +1,9 @@
 /*
- * Nome do arquivo: PenaltyFootball.java
+ * Nome do arquivo: ModoSolo.java
  * Autor: lauriano <laurianocarlos@hotmail.com>
  * Data de criação: 01/03/2023
  * Versão: 1.0
- * Descrição: classe que exercuta o jogo
+ * Descrição: classe com o metodo de modoSolo, super classe
  * Colaboradores: Ana Lucia, Bruno de Oliveira, Giovanna Moreira, Melissa Gonçalve, Lauriano Carlos
  * Última modificação: 13/04/2023 (Lauriano)
  */
