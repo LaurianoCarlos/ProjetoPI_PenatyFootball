@@ -5,7 +5,7 @@
  * Versão: 1.0
  * Descrição: classe com o metodo de modoSolo, super classe
  * Colaboradores: Ana Lucia, Bruno de Oliveira, Giovanna Moreira, Melissa Gonçalve, Lauriano Carlos
- * Última modificação: 13/04/2023 (Lauriano)
+ * Última modificação: 27/04/2023 (Lauriano)
  */
 package br.com.projetopi.penaltyfootball.mododejogo;
 
@@ -252,7 +252,8 @@ public class ModoSolo {
 	*/
 
 	public void modoSolo() {
-		// Chama o método de inicialização da animação
+		/*@link Animacao#inicializacaoModoSolo()
+		 Chama o método de inicialização da animação*/
 		Animacao.inicializacaoModoSolo();
 
 		// Cria um objeto de usuário com o nome informado pelo jogador
@@ -289,16 +290,18 @@ public class ModoSolo {
 
 			} while (usuario.getCantoSelecionado() < 1 || usuario.getCantoSelecionado() > 5);
 
-			// Gera um número aleatório para representar a escolha do goleiro
+			          /**@link ModoSolo#numeroAleatorio*/
 			goleiro = numeroAleatorio();
-			// Calcula o nível de dificuldade do goleiro com base no nível de jogo escolhido
-			// pelo usuário, no canto selecionado e na escolha aleatória do goleiro
+			
 			int nivelLooping = nivel(usuario.getNivelDeJogo(), usuario.getCantoSelecionado(), goleiro);
-			// Verifica se o usuário fez um gol ou não, com base no canto selecionado e no
-			// nível de dificuldade do goleiro
+			/** Verifica se o usuário fez um gol ou não, com base no canto selecionado e no
+			 * @link ModoSolo#nivel
+			 */
 			boolean gol = verificarPenalty(usuario.getCantoSelecionado(), nivelLooping);
 
-			// Chama o método de animação para mostrar se o usuário fez um gol ou não
+			/* Chama o método de animação para mostrar se o usuário fez um gol ou não
+			 * * @link Animacao#gol()
+			 */
 			Animacao.gol(gol);
 
 			System.out.println();
@@ -318,13 +321,17 @@ public class ModoSolo {
 
 			// Verifica o ganhador da partida e encerra o loop/jogo
 			if (placarJogador >= 5) {
-				// exibi a mensagem do vencedor
+				/** exibi a mensagem do vencedor
+				 * @link Animacao#exibirGanhador()
+				 */
 				Animacao.exibirGanhador(true);
 				System.out.println();
 				break;
 			}
 			if (placarGoleiro >= 5) {
-				// exibi a mensagem do perdedor
+				/** exibi a mensagem do perdedor
+				 * * @link Animacao#exibirGanhador()
+				 */
 				Animacao.exibirGanhador(false);
 				System.out.println();
 				break;

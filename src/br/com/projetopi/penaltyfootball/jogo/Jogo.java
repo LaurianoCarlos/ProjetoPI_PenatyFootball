@@ -19,6 +19,14 @@ import br.com.projetopi.penaltyfootball.mododejogo.MultiJogador;
 
 public class Jogo {
 
+	/**
+	 * O método `iniciar` é responsável por exibir o menu principal do jogo e
+	 * permitir que o usuário escolha um modo de jogo. Ele cria instâncias dos
+	 * objetos `ModoSolo`, `MultiJogador`, `ModoRankeada` e `ModoHistoria` para cada
+	 * modo de jogo e exibe o menu principal até que o usuário escolha a opção "0"
+	 * para sair do jogo.
+	 */
+
 	public static void iniciar() {
 
 		int opcao = -1;
@@ -52,7 +60,6 @@ public class Jogo {
 					opcao = input.nextInt();
 
 				}
-				// Entra em um loop até que o usuário escolha uma opcção válida (entre 0 e 5)
 			} while (opcao < 1 || opcao > 5);
 
 			switch (opcao) {

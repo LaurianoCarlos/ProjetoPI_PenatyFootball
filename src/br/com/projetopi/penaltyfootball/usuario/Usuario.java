@@ -3,74 +3,138 @@
  * Autor: Ana Lucia,Bruno de Oliveira, Giovanna Moreira, Lauriano Carlos, Melissa Gonçalves
  * Data de criação: 01/03/2023
  * Versão: 1.0
- * Descrição: classe que contém dados do usuario/jogador
- * Última modificação: 13/04/2023 (Lauriano)
+ * Descrição:Classe que representa um usuário no jogo Penalty Football.
+ * Última modificação: 27/04/2023 (Lauriano)
  */
 package br.com.projetopi.penaltyfootball.usuario;
-
-import java.util.Random;
 
 public class Usuario {
 
 	private String nome;
-    private int nivelDeJogo;
-    private int cantoSelecionado;
-    private int pontuacao;
-    private int id_usuario;
-    
-Random rdn = new Random();
+	private int nivelDeJogo;
+	private int cantoSelecionado;
+	private int pontuacao;
+	private int id_usuario;
 
-    public Usuario() {
-     this.nome = "Rony";
-     this.nivelDeJogo = 1;
-     this.cantoSelecionado = 1;
-     this.pontuacao = 0;
-     this.setId_usuario(rdn.nextInt(10000,99999));
-    }
+	/**
+	 * Construtor padrão da classe. Inicializa o nome com o valor "Batedor", o nível
+	 * de jogo com 1, o canto selecionado com 1 e a pontuação com 0.
+	 */
+	public Usuario() {
+		this.nome = "Batedor";
+		this.nivelDeJogo = 1;
+		this.cantoSelecionado = 1;
+		this.pontuacao = 0;
+	}
 
-    public Usuario(String nome) {
-        this.nome = nome;
-        this.nivelDeJogo = 1;
-        this.cantoSelecionado = 1;
-        this.pontuacao = 0;
-    }
-   
-    public String getNome() {
-        return nome;
-    }
+	/**
+	 * Construtor da classe que recebe o nome do usuário como parâmetro.
+	 * 
+	 * @param nome o nome do usuário.
+	 */
+	public Usuario(String nome) {
+		this.nome = nome;
+		this.nivelDeJogo = 1;
+		this.cantoSelecionado = 1;
+		this.pontuacao = 0;
+	}
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+	/**
+	 * 
+	 * Método para obter o nome do usuário.
+	 * 
+	 * @return o nome do usuário.
+	 */
+	public String getNome() {
+		return nome;
+	}
 
-    public int getNivelDeJogo() {
-        return nivelDeJogo;
-    }
+	/**
+	 * 
+	 * Método para definir o nome do usuário.
+	 * 
+	 * @param nome o nome do usuário.
+	 */
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
-    public void setNivelDeJogo(int nivelDeJogo) {
-        this.nivelDeJogo = nivelDeJogo;
-    }
+	/**
+	 * 
+	 * Método para obter o nível de jogo do usuário.
+	 * 
+	 * @return o nível de jogo do usuário.
+	 */
+	public int getNivelDeJogo() {
+		return nivelDeJogo;
+	}
 
-    public int getPontuacao() {
-        return pontuacao;
-    }
+	/**
+	 * 
+	 * Método para definir o nível de jogo do usuário.
+	 * 
+	 * @param nivelDeJogo o nível de jogo do usuário.
+	 */
+	public void setNivelDeJogo(int nivelDeJogo) {
+		this.nivelDeJogo = nivelDeJogo;
+	}
 
-    public void setPontuacao(int pontuacao) {
-        this.pontuacao += pontuacao;
-    }
+	/**
+	 * 
+	 * Método para obter a pontuação atual do usuário.
+	 * 
+	 * @return a pontuação atual do usuário.
+	 */
+	public int getPontuacao() {
+		return pontuacao;
+	}
 
-    public int getCantoSelecionado() {
-        return cantoSelecionado;
-    }
+	/**
+	 * 
+	 * Método para atualizar a pontuação do usuário.
+	 * 
+	 * @param pontuacao a pontuação a ser somada à pontuação atual do usuário.
+	 */
+	public void setPontuacao(int pontuacao) {
+		this.pontuacao += pontuacao;
+	}
 
-    public void setCantoSelecionado(int cantoSelecionado) {
-        this.cantoSelecionado = cantoSelecionado;
-    }
+	/**
+	 * 
+	 * Método para obter o canto selecionado pelo usuário.
+	 * 
+	 * @return o canto selecionado pelo usuário.
+	 */
+	public int getCantoSelecionado() {
+		return cantoSelecionado;
+	}
 
+	/**
+	 * 
+	 * Método para definir o canto selecionado pelo usuário.
+	 * 
+	 * @param cantoSelecionado o canto selecionado pelo usuário.
+	 */
+	public void setCantoSelecionado(int cantoSelecionado) {
+		this.cantoSelecionado = cantoSelecionado;
+	}
+
+	/**
+	 * 
+	 * Método para obter o ID do usuário.
+	 * 
+	 * @return o ID do usuário.
+	 */
 	public int getId_usuario() {
 		return id_usuario;
 	}
 
+	/**
+	 * 
+	 * Método para definir o ID do usuário.
+	 * 
+	 * @param id_usuario o ID do usuário.
+	 */
 	public void setId_usuario(int id_usuario) {
 		this.id_usuario = id_usuario;
 	}

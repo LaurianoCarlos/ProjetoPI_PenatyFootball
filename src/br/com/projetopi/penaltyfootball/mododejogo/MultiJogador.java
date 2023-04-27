@@ -4,7 +4,7 @@
  * Data de criação: 01/03/2023
  * Versão: 1.0
  * Descrição: classe que contém o modo de jogo MultiJogador
- * Última modificação: 13/04/2023 (Lauriano)
+ * Última modificação: 27/04/2023 (Lauriano)
  */
 package br.com.projetopi.penaltyfootball.mododejogo;
 
@@ -13,6 +13,15 @@ import br.com.projetopi.penaltyfootball.usuario.Usuario;
 
 public class MultiJogador extends ModoSolo {
 
+	
+	/**
+	 * Pede ao usuário para inserir o nome do jogador e retorna o nome inserido.
+	 * Se verificarJogador for verdadeiro, solicita o nome do goleiro.
+	 * Se verificarJogador for falso, solicita o nome do batedor.
+	 * 
+	 * @param verificarJogador um valor booleano que indica se o jogador a ser inserido é um goleiro ou um batedor.
+	 * @return o nome do jogador inserido.
+	 */
 	private String nomeJogador(boolean verificarJogador) {
 
 		if (verificarJogador == false) {
@@ -29,6 +38,12 @@ public class MultiJogador extends ModoSolo {
 		return nome;
 	}
 
+	/**
+	 * Exibe um gol de futebol e solicita ao usuário que escolha um canto para chutar a bola.
+	 * 
+	 * @param nome o NOME do jogador que está chutando a bola.
+	 * @return um número que representa o canto escolhido pelo jogador.
+	 */
 	private int escolherCanto(String nome) {
 
 		System.out.println("\nESCOLHA UM CANTO!!!\n");
@@ -49,12 +64,16 @@ public class MultiJogador extends ModoSolo {
 		return canto;
 	}
 
+	
+	/**
+	Método de jogo que simula uma partida de penaltis 1x1, onde quem marcar 5 gols primeiro é o vencedor da partida
+	*/
 	public void multiJogador() {
 		
 		/**
-		 * Inicia a animação de introdução do modo multiplayer
-		 * @see Animacao#inicializacaoMultiJogador()
-		 */
+		 * Inicia a animação de introdução do modo multiJogador
+		 * @link Animacao#inicializacaoMultiJogador()
+		 */        
 		Animacao.inicializacaoMultiJogador();
 
 		System.out.println();

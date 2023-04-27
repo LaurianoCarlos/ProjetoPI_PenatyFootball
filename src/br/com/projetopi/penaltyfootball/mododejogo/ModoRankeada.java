@@ -4,7 +4,7 @@
  * Data de criação: 01/03/2023
  * Versão: 1.0
  * Descrição: classe que contém o modo de jogo Rankeada
- * Última modificação: 13/04/2023 (Lauriano)
+ * Última modificação: 27/04/2023 (Lauriano)
  */
 package br.com.projetopi.penaltyfootball.mododejogo;
 
@@ -16,24 +16,25 @@ public class ModoRankeada extends ModoSolo {
 
 	public void Rankedada() {
 
-		boolean gol;
-
+		
+		         /**@link ModoSolo#inicializacaoModoRankeada()*/
 		Animacao.inicializacaoModoRankeada();
 		
 		Usuario usuario = new Usuario(nomeJogador());
-		gol = true;
 
 	//O modo Rankeada se passa no modo fácil
 			usuario.setNivelDeJogo(1);
 			
 			jogarNovamente = "S";
-			// Define os pontuacao inicial do jogador
+			// Define a pontuacao inicial do jogador
 			placarJogador = 0;
 
 			while (!(jogarNovamente == "N")) {
 
+				boolean gol = true;
+				
 				do {
-					
+					                            /**@link ModoSolo#escolherCanto()*/
 					usuario.setCantoSelecionado(escolherCanto());
 					input.nextLine();
 
@@ -44,12 +45,10 @@ public class ModoRankeada extends ModoSolo {
 
 				} while (usuario.getCantoSelecionado() < 1 || usuario.getCantoSelecionado() > 5);
 
-				// Gera um número aleatório para representar a escolha do goleiro
-				// Calcula o nível de dificuldade do goleiro com base no nível de jogo escolhido
-				// pelo usuário, no canto selecionado e na escolha aleatória do goleiro
+				                  /**@link ModoSolo#nivel()*/
 				int nivelLooping = nivel(usuario.getNivelDeJogo(), usuario.getCantoSelecionado(), goleiro);
-				// Verifica se o usuário fez um gol ou não, com base no canto selecionado e no
-				// nível de dificuldade do goleiro
+				
+				         /**@link ModoSolo#verificarPenalty()*/
 			      gol = verificarPenalty(usuario.getCantoSelecionado(), nivelLooping);
 			      
 			      Animacao.gol(gol);
@@ -63,7 +62,7 @@ public class ModoRankeada extends ModoSolo {
 			
 			System.out.println();
 			System.out.println("--Fim de jogo!!!--");
-			System.out.println("Seu Id: "+ usuario.getId_usuario() + " pontuacao foi: "+ usuario.getPontuacao()+ " pontos!");
+			System.out.println("Sua pontuacao foi: "+ usuario.getPontuacao()+ " pontos!");
 			
 			DbMetodos.adicionarNaTabelaRanking(usuario.getNome(), usuario.getPontuacao());
 			System.out.println();
